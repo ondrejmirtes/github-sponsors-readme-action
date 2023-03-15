@@ -124,7 +124,8 @@ export function generateTemplate(
 
     filteredSponsors.map(({sponsorEntity}) => {
       sponsorEntity.websiteUrl = sponsorEntity.websiteUrl || sponsorEntity.url
-      template = template += render(action.template, sponsorEntity)
+      template = template += `${render(action.template, sponsorEntity)}
+`
     })
   } else {
     info(`No sponsorship data was found… ❌`)
